@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Zegarek</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <script type="text/javascript">
+
+function odliczanie() 
+{
+    var dzisiaj = new Date();
+
+    var dzien = dzisiaj.getDate();
+    var miesiac = dzisiaj.getMonth()+1;
+    var rok = dzisiaj.getFullYear();
+
+    var minuta = dzisiaj.getMinutes();
+    if (minuta<10) minuta = "0"+minuta;
+    var godzina = dzisiaj.getHours();
+    if (godzina<10) godzina = "0"+godzina;
+        
+    
+    var sekunda = dzisiaj.getSeconds();
+    if (sekunda<10) sekunda = "0"+sekunda;
+
+    document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+" | "+godzina+":"+minuta+":"+sekunda;
+
+    setTimeout("odliczanie()",1000);
+}
+    
+
+    </script>
+</head>
+<body onload="odliczanie();">
+    <div id="zegar"></div>
+    
+
+</body>
+</html>
